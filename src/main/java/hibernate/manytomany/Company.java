@@ -1,5 +1,6 @@
 package hibernate.manytomany;
 
+import hibernate.task.Task;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,12 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+
+@NamedNativeQuery(
+        name = "Company.findByThreeFirstCharacters",
+        query = "select * from Companies where SUBSTRING(COMPANY_NAME, 1, 3) = :THREE_FIRST_CHARACTERS",
+        resultClass = Company.class
+)
 @Getter
 @Setter
 @NoArgsConstructor

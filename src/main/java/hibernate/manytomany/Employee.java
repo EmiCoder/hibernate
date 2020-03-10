@@ -11,6 +11,10 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedQuery(
+        name = "Employee.findByLastname",
+        query = "from Employee where lastname = :LASTNAME"
+)
 @NoArgsConstructor
 @Getter
 @Setter

@@ -13,6 +13,21 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @Entity
+@NamedQueries({
+        @NamedQuery(
+                name = "Task.retrieveByDuration",
+                query = "from Task where duration > 10"
+        ),
+        @NamedQuery(
+                name = "Task.retrieveTaksWithParametrs",
+                query = "from Task where duration > :Duration"
+        )
+})
+@NamedNativeQuery(
+        name = "Task.retrieveFromTasks",
+        query = "select * from Tasks",
+        resultClass = Task.class
+)
 @Table(name="TASKS")
 public class Task {
 
