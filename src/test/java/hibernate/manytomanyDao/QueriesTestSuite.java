@@ -32,6 +32,7 @@ public class QueriesTestSuite {
         companyDao.deleteById(company1.getId());
         companyDao.deleteById(company2.getId());
         companyDao.deleteById(company3.getId());
+        companyDao.deleteAll();
     }
 
     @Test
@@ -46,6 +47,7 @@ public class QueriesTestSuite {
         employeeDao.deleteById(employee1.getId());
         employeeDao.deleteById(employee2.getId());
         employeeDao.deleteById(employee3.getId());
+        employeeDao.deleteAll();
     }
 
 }

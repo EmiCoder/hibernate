@@ -24,6 +24,7 @@ public class TaskList {
     private String listName;
     @Column(name="DESCRIPTION")
     private String description;
+
     @OneToMany(
             targetEntity = Task.class,
             mappedBy = "taskList",

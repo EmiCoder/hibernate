@@ -16,6 +16,12 @@ import java.util.List;
         query = "select * from Companies where SUBSTRING(COMPANY_NAME, 1, 3) = :THREE_FIRST_CHARACTERS",
         resultClass = Company.class
 )
+
+@NamedQuery(
+        name = "Company.retrieveCompaniesWithNameLike",
+        query = "FROM Company WHERE COMPANY_NAME LIKE :ARG"
+)
+
 @Getter
 @Setter
 @NoArgsConstructor

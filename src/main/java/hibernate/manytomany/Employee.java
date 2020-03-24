@@ -11,10 +11,20 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedQuery(
-        name = "Employee.findByLastname",
-        query = "from Employee where lastname = :LASTNAME"
-)
+
+@NamedQueries({
+        @NamedQuery(
+                name = "Employee.findByLastname",
+                query = "from Employee where lastname = :LASTNAME"
+        ),
+        @NamedQuery(
+                name = "Employee.retrieveEmployeesWithNameLike",
+                query = "FROM Employee WHERE lastname LIKE :ARG"
+        )
+})
+
+
+
 @NoArgsConstructor
 @Getter
 @Setter
